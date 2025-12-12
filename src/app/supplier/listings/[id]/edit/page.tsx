@@ -1,0 +1,214 @@
+
+"use client"
+
+import { useState, useEffect } from "react"
+import { useRouter, useParams } from "next/navigation"
+import { toast } from "sonner"
+import type { Listing } from "@/types"
+
+export default function EditListingPage() {
+    const router = useRouter()
+    const params = useParams()
+    const id = params?.id
+
+    const [formData, setFormData] = useState({
+        category: "raw_material",
+        name: "",
+        description: "",
+        quantityAvailable: 0,
+        unit: "kg",
+        locationCountry: "",
+        pricingMode: "FIXED",
+        unitPrice: 0
+    })
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        if (id) {
+            // We need an endpoint to fetch single listing details.
+            // Currently we only have /api/listings (all) or /api/listings/mine (all mine).
+            // I'll assume we can filter from /api/listings/mine for now, or fetch from general.
+            // Better: Add GET /api/listings/[id]
+            fetch(`/api/listings/${id}`)
+                .then(res => {
+                    if (!res.ok) throw new Error("Failed")
+                    return res.json()
+                })
+                .then(data => {
+                    setFormData({
+                        category: data.category,
+                        name: data.name,
+                        description: data.description,
+                        quantityAvailable: data.quantityAvailable,
+                        unit: data.unit,
+                        locationCountry: data.locationCountry,
+                        pricingMode: data.pricingMode,
+                        unitPrice: data.unitPrice || 0
+                    })
+                })
+                .catch(err => {
+                    toast.error("Failed to fetch listing details")
+                    router.push("/supplier/listings")
+                })
+                .finally(() => setLoading(false))
+        }
+    }, [id, router])
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        setLoading(true)
+
+        try {
+            const payload = {
+                ...formData,
+                unitPrice: formData.pricingMode === "FIXED" ? Number(formData.unitPrice) : null,
+                quantityAvailable: Number(formData.quantityAvailable)
+            }
+
+            const res = await fetch(`/api/listings/${id}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            })
+
+            if (!res.ok) throw new Error("Failed to update")
+
+            toast.success("Listing Updated Successfully")
+            router.push("/supplier/listings")
+            router.refresh()
+        } catch (error) {
+            toast.error("Error updating listing")
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    if (loading) return <div className="p-8 text-center">Loading listing...</div>
+
+    return (
+        <div className="max-w-3xl mx-auto py-10">
+            <h1 className="text-3xl font-bold mb-8">Edit Listing</h1>
+
+            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label className="block text-sm font-medium mb-1">Name</label>
+                        <input
+                            type="text" required
+                            className="w-full border p-2 rounded-lg"
+                            value={formData.name}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium mb-1">Category</label>
+                        <select
+                            className="w-full border p-2 rounded-lg"
+                            value={formData.category}
+                            onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                        >
+                            <option value="raw_material">Raw Material</option>
+                            <option value="service">Service</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label className="block text-sm font-medium mb-1">Description</label>
+                    <textarea
+                        required
+                        rows={4}
+                        className="w-full border p-2 rounded-lg"
+                        value={formData.description}
+                        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                    />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label className="block text-sm font-medium mb-1">Quantity</label>
+                        <input
+                            type="number" min="1" required
+                            className="w-full border p-2 rounded-lg"
+                            value={formData.quantityAvailable}
+                            onChange={(e) => setFormData({ ...formData, quantityAvailable: Number(e.target.value) })}
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium mb-1">Unit</label>
+                        <input
+                            type="text" required placeholder="kg, ton, etc."
+                            className="w-full border p-2 rounded-lg"
+                            value={formData.unit}
+                            onChange={(e) => setFormData({ ...formData, unit: e.target.value })}
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium mb-1">Location (Country)</label>
+                        <input
+                            type="text" required
+                            className="w-full border p-2 rounded-lg"
+                            value={formData.locationCountry}
+                            onChange={(e) => setFormData({ ...formData, locationCountry: e.target.value })}
+                        />
+                    </div>
+                </div>
+
+                <div>
+                    <label className="block text-sm font-medium mb-2">Pricing Mode</label>
+                    <div className="flex gap-4 mb-4">
+                        <label className="flex items-center gap-2 cursor-pointer">
+                            <input
+                                type="radio"
+                                name="pricingMode"
+                                value="FIXED"
+                                checked={formData.pricingMode === "FIXED"}
+                                onChange={(e) => setFormData({ ...formData, pricingMode: e.target.value })}
+                            />
+                            <span className="font-medium">Fixed Price</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer">
+                            <input
+                                type="radio"
+                                name="pricingMode"
+                                value="RFQ_ONLY"
+                                checked={formData.pricingMode === "RFQ_ONLY"}
+                                onChange={(e) => setFormData({ ...formData, pricingMode: e.target.value })}
+                            />
+                            <span className="font-medium">Request for Quote (RFQ)</span>
+                        </label>
+                    </div>
+
+                    {formData.pricingMode === "FIXED" && (
+                        <div>
+                            <label className="block text-sm font-medium mb-1">Unit Price ($)</label>
+                            <input
+                                type="number" min="0" step="0.01" required
+                                className="w-full border p-2 rounded-lg"
+                                value={formData.unitPrice}
+                                onChange={(e) => setFormData({ ...formData, unitPrice: Number(e.target.value) })}
+                            />
+                        </div>
+                    )}
+                </div>
+
+                <div className="flex gap-4">
+                    <button
+                        type="button"
+                        onClick={() => router.back()}
+                        className="bg-gray-200 text-gray-800 px-6 py-2 rounded-lg hover:bg-gray-300 font-semibold w-full md:w-auto"
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        type="submit" disabled={loading}
+                        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 font-semibold w-full md:w-auto"
+                    >
+                        {loading ? "Saving..." : "Save Changes"}
+                    </button>
+                </div>
+            </form>
+        </div>
+    )
+}

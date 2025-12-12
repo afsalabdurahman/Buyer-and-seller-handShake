@@ -1,0 +1,261 @@
+
+> temp_app@0.1.0 build
+> next build
+
+   ▲ Next.js 16.0.8 (Turbopack)
+   - Environments: .env
+
+   Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 14 errors:
+./app/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+[0m [90m 2 |[39m [36mimport[39m type { [33mMetadata[39m } [36mfrom[39m [32m"next"[39m[33m;[39m
+ [90m 3 |[39m [36mimport[39m { [33mInter[39m } [36mfrom[39m [32m"next/font/google"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m [32m"./globals.css"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m [33mProviders[39m [36mfrom[39m [32m"@/components/Providers"[39m[33m;[39m
+ [90m 6 |[39m [36mimport[39m [33mNavbar[39m [36mfrom[39m [32m"@/components/Navbar"[39m[33m;[39m
+ [90m 7 |[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/layout.tsx:6:1
+Module not found: Can't resolve '@/components/Navbar'
+[0m [90m 4 |[39m [36mimport[39m [32m"./globals.css"[39m[33m;[39m
+ [90m 5 |[39m [36mimport[39m [33mProviders[39m [36mfrom[39m [32m"@/components/Providers"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 6 |[39m [36mimport[39m [33mNavbar[39m [36mfrom[39m [32m"@/components/Navbar"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m inter [33m=[39m [33mInter[39m({ subsets[33m:[39m [[32m"latin"[39m] })[33m;[39m
+ [90m 9 |[39m[0m
+
+Import map: aliased to relative './src/components/Navbar' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/layout.tsx:5:1
+Module not found: Can't resolve '@/components/Providers'
+[0m [90m 3 |[39m [36mimport[39m { [33mInter[39m } [36mfrom[39m [32m"next/font/google"[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m [32m"./globals.css"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m [33mProviders[39m [36mfrom[39m [32m"@/components/Providers"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m [33mNavbar[39m [36mfrom[39m [32m"@/components/Navbar"[39m[33m;[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m inter [33m=[39m [33mInter[39m({ subsets[33m:[39m [[32m"latin"[39m] })[33m;[39m[0m
+
+Import map: aliased to relative './src/components/Providers' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/api/auth/[...nextauth]/route.ts:2:1
+Module not found: Can't resolve '@/lib/auth'
+[0m [90m 1 |[39m
+[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"@/lib/auth"[39m [90m// Adjust path if needed[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 3 |[39m [36mimport[39m [33mNextAuth[39m [36mfrom[39m [32m"next-auth"[39m
+ [90m 4 |[39m
+ [90m 5 |[39m [36mconst[39m handler [33m=[39m [33mNextAuth[39m(authOptions)[0m
+
+Import map: aliased to relative './src/lib/auth' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/api/listings/mine/route.ts:4:1
+Module not found: Can't resolve '@/lib/auth'
+[0m [90m 2 |[39m [36mimport[39m { [33mNextResponse[39m } [36mfrom[39m [32m"next/server"[39m
+ [90m 3 |[39m [36mimport[39m { getServerSession } [36mfrom[39m [32m"next-auth"[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"@/lib/auth"[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m { prisma } [36mfrom[39m [32m"@/lib/prisma"[39m
+ [90m 6 |[39m
+ [90m 7 |[39m [36mexport[39m [36masync[39m [36mfunction[39m [33mGET[39m(req[33m:[39m [33mRequest[39m) {[0m
+
+Import map: aliased to relative './src/lib/auth' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/api/listings/route.ts:4:1
+Module not found: Can't resolve '@/lib/auth'
+[0m [90m 2 |[39m [36mimport[39m { [33mNextResponse[39m } [36mfrom[39m [32m"next/server"[39m
+ [90m 3 |[39m [36mimport[39m { getServerSession } [36mfrom[39m [32m"next-auth"[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"@/lib/auth"[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m { prisma } [36mfrom[39m [32m"@/lib/prisma"[39m
+ [90m 6 |[39m [36mimport[39m { z } [36mfrom[39m [32m"zod"[39m
+ [90m 7 |[39m[0m
+
+Import map: aliased to relative './src/lib/auth' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/api/requests/[id]/route.ts:4:1
+Module not found: Can't resolve '@/lib/auth'
+[0m [90m 2 |[39m [36mimport[39m { [33mNextResponse[39m } [36mfrom[39m [32m"next/server"[39m
+ [90m 3 |[39m [36mimport[39m { getServerSession } [36mfrom[39m [32m"next-auth"[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"@/lib/auth"[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m { prisma } [36mfrom[39m [32m"@/lib/prisma"[39m
+ [90m 6 |[39m [36mimport[39m { z } [36mfrom[39m [32m"zod"[39m
+ [90m 7 |[39m[0m
+
+Import map: aliased to relative './src/lib/auth' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/api/requests/route.ts:4:1
+Module not found: Can't resolve '@/lib/auth'
+[0m [90m 2 |[39m [36mimport[39m { [33mNextResponse[39m } [36mfrom[39m [32m"next/server"[39m
+ [90m 3 |[39m [36mimport[39m { getServerSession } [36mfrom[39m [32m"next-auth"[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"@/lib/auth"[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m { prisma } [36mfrom[39m [32m"@/lib/prisma"[39m
+ [90m 6 |[39m [36mimport[39m { z } [36mfrom[39m [32m"zod"[39m
+ [90m 7 |[39m[0m
+
+Import map: aliased to relative './src/lib/auth' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/page.tsx:5:1
+Module not found: Can't resolve '@/lib/auth'
+[0m [90m 3 |[39m [36mimport[39m [33mLink[39m [36mfrom[39m [32m'next/link'[39m
+ [90m 4 |[39m [36mimport[39m { getServerSession } [36mfrom[39m [32m"next-auth"[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"@/lib/auth"[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { redirect } [36mfrom[39m [32m'next/navigation'[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mexport[39m [36mdefault[39m [36masync[39m [36mfunction[39m [33mHome[39m() {[0m
+
+Import map: aliased to relative './src/lib/auth' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/api/listings/mine/route.ts:5:1
+Module not found: Can't resolve '@/lib/prisma'
+[0m [90m 3 |[39m [36mimport[39m { getServerSession } [36mfrom[39m [32m"next-auth"[39m
+ [90m 4 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"@/lib/auth"[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { prisma } [36mfrom[39m [32m"@/lib/prisma"[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m
+ [90m 7 |[39m [36mexport[39m [36masync[39m [36mfunction[39m [33mGET[39m(req[33m:[39m [33mRequest[39m) {
+ [90m 8 |[39m     [36mconst[39m session [33m=[39m [36mawait[39m getServerSession(authOptions)[0m
+
+Import map: aliased to relative './src/lib/prisma' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/api/listings/route.ts:5:1
+Module not found: Can't resolve '@/lib/prisma'
+[0m [90m 3 |[39m [36mimport[39m { getServerSession } [36mfrom[39m [32m"next-auth"[39m
+ [90m 4 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"@/lib/auth"[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { prisma } [36mfrom[39m [32m"@/lib/prisma"[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { z } [36mfrom[39m [32m"zod"[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m listingSchema [33m=[39m z[33m.[39mobject({[0m
+
+Import map: aliased to relative './src/lib/prisma' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/api/register/route.ts:4:1
+Module not found: Can't resolve '@/lib/prisma'
+[0m [90m 2 |[39m [36mimport[39m { [33mNextResponse[39m } [36mfrom[39m [32m"next/server"[39m
+ [90m 3 |[39m [36mimport[39m { hash } [36mfrom[39m [32m"bcryptjs"[39m
+[31m[1m>[22m[39m[90m 4 |[39m [36mimport[39m { prisma } [36mfrom[39m [32m"@/lib/prisma"[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 5 |[39m [36mimport[39m { z } [36mfrom[39m [32m"zod"[39m
+ [90m 6 |[39m
+ [90m 7 |[39m [36mconst[39m registerSchema [33m=[39m z[33m.[39mobject({[0m
+
+Import map: aliased to relative './src/lib/prisma' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/api/requests/[id]/route.ts:5:1
+Module not found: Can't resolve '@/lib/prisma'
+[0m [90m 3 |[39m [36mimport[39m { getServerSession } [36mfrom[39m [32m"next-auth"[39m
+ [90m 4 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"@/lib/auth"[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { prisma } [36mfrom[39m [32m"@/lib/prisma"[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { z } [36mfrom[39m [32m"zod"[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m updateSchema [33m=[39m z[33m.[39mobject({[0m
+
+Import map: aliased to relative './src/lib/prisma' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./app/api/requests/route.ts:5:1
+Module not found: Can't resolve '@/lib/prisma'
+[0m [90m 3 |[39m [36mimport[39m { getServerSession } [36mfrom[39m [32m"next-auth"[39m
+ [90m 4 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"@/lib/auth"[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { prisma } [36mfrom[39m [32m"@/lib/prisma"[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m [36mimport[39m { z } [36mfrom[39m [32m"zod"[39m
+ [90m 7 |[39m
+ [90m 8 |[39m [36mconst[39m requestSchema [33m=[39m z[33m.[39mobject({[0m
+
+Import map: aliased to relative './src/lib/prisma' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./app/layout.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/layout.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/layout.tsx:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/api/auth/[...nextauth]/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/api/listings/mine/route.ts:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/api/listings/route.ts:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/api/requests/[id]/route.ts:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/api/requests/route.ts:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/page.tsx:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/api/listings/mine/route.ts:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/api/listings/route.ts:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/api/register/route.ts:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/api/requests/[id]/route.ts:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./app/api/requests/route.ts:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)

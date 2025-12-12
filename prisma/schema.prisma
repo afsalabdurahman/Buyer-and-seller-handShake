@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String
+  createdAt DateTime @default(now())
+  
+  listings  Listing[]
+  requests  Request[]
+}
+
+model Listing {
+  id              String   @id @default(uuid())
+  supplierId      String
+  supplier        User     @relation(fields: [supplierId], references: [id])
+  
+  category        String
+  name            String
+  description     String
+  quantityAvailable Int
+  unit            String
+  locationCountry String
+  pricingMode     String
+  unitPrice       Float?
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  requests        Request[]
+}
+
+model Request {
+  id                String   @id @default(uuid())
+  listingId         String
+  listing           Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  
+  buyerId           String
+  buyer             User     @relation(fields: [buyerId], references: [id])
+  
+  requestedQuantity Int
+  message           String?
+  status            String   @default("PENDING")
+  paymentStatus     String?  // "COMPLETED" | "PENDING"
+  totalAmount       Float?
+
+  createdAt         DateTime @default(now())
+}
