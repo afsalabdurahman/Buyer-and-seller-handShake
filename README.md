@@ -1,6 +1,6 @@
 
 # Resource Hub
-
+![Resource Hub Banner](./public/hande.JPG)
 A web application for suppliers to list resources and buyers to request them. Built with Next.js 14 (App Router), Tailwind CSS, and NextAuth.js.
 
 ## How to Run
